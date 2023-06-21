@@ -87,3 +87,11 @@ containerCategory.forEach((categoryItem) => {
 }
 // EJECUTAR FUNCION 
 funCategory ();
+
+const productos = [
+    {
+        imagen: "assets/headset.svg",
+        nombre: "Headset",
+        id: headset
+    },
+]

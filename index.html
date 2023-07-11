@@ -19,13 +19,22 @@
                     <h1>HarWaVan</h1>
                 </div>
             </a>
-            <img src="assets/shopping-cart.svg" alt="carrito">
+            <div class="carritocontent">
+            <img src="assets/shopping-cart.svg" id="imagen-carrito" alt="Carrito de Compras">
+            <div id="carrito">
+                <h2>Shopping Cart</h2>
+                <div id="carrito-productos"></div>
+                <p id="mensaje"></p>
+                <button id="boton-vaciar-carrito">Empty Cart</button>
+                <button id="boton-finalizar-compra">Complete Purchase</button>
+            </div>
+        </div>
         </div>
         <div class="below">
             <nav class="nav">
                 <a href="index.html" class="navlist">Home</a>
                 <a href="">Products</a>
-                <a href="pages/code.html" class="navlist">I have Code!</a>
+                <a href="#code" class="navlist">I have Code!</a>
                 <a href="" class="navlist">About Us</a>
                 <a href="" class="navlist">Contact</a>
             </nav>
@@ -70,9 +79,11 @@
             <div class="grid products2">
                 <!-- contenido en js -->
             </div>
+            <div class="product-container">
             <div class="product">
                 <!-- contenido en js -->
             </div>
+        </div>
         </section>
     </main>
     <footer>
@@ -103,8 +114,11 @@
                 <img src="assets/amex.svg" alt="">
             </div>
         </div>
+        <div id="code">
+            <h2>hola</h2>
+        </div>
     </footer>
 </body>
 <script src="main.js"></script>
-
+<script src="carrito.js"></script>
 </html>

@@ -1,47 +1,3 @@
-// parte principal donde se pide que quiere hacer el usuario, todo con numeros y se repite hasta que el usuario ingrese 0
-// let menuE = false;
-//     do {
-//         let prodI = parseInt(prompt(`Enter the action using a number 
-//     0 - Exit the menu 
-//     1 - I have a discount coupon `));
-
-//         if (prodI === 0 || prodI === 1) {
-//             switch (prodI) {
-//                 case 1:
-//                     codeOff();
-//                     break;
-//                 case 0:
-//                     alert(`Have a good day, thank you.`);
-//                     menuE = true;
-//                     break;
-//             }
-//         } else {
-//             alert(`Invalid input. Please enter a valid number.`);
-//         }
-//     }
-//     while (!menuE);
-
-// funcion que da codigo de descuento si ingresa 12345678
-
-function codeOff() {
-    const codeValid = 12345678;
-    let attempts = 0;
-
-    while (attempts < 5) {
-        let codeIngresado = parseInt(prompt("Enter the discount code:"));
-
-        if (codeIngresado === codeValid) {
-            alert("Valid code. You have a 20% discount.");
-            break;
-        }
-
-        attempts++;
-        alert("Invalid code. Attempt " + attempts + " of 5.");
-    }
-    if (attempts === 5) {
-        alert("You have reached the maximum number of allowed attempts.");
-    }
-}
 
 // definimos un array con todos los elementos esto me hace facil cambiar las cosas cuando no las necesite o agregue nuevas
 const containerCategory = [
@@ -76,36 +32,91 @@ const containerProduct= [
         nombre: "Mouse Redragon M177",
         precio: "9500",
         fabric: "redragon",
+        id: 1,
     },
     {
         imagen: "assets/mouse-logitech-305.jpg",
         nombre: "Mouse Logitech G305",
         precio: "21000",
         fabric: "logitech",
+        id: 2,
     },
     {
         imagen: "assets/headset-zeus.jpg",
         nombre: "Headset Redragon Zeus",
         precio: "35000",
         fabric: "redragon",
+        id: 3,
     },
     {
         imagen: "assets/headset-i-g733.jpg",
         nombre: "Headset logitech G733",
         precio: "95000",
         fabric: "logitech",
+        id: 4,
     },
     {
         imagen: "assets/headset-l-g432.jpg",
         nombre: "Headset Logitech G432",
         precio: "42999",
         fabric: "logitech",
+        id: 5,
     },
     {
         imagen: "assets/headset-g435.jpg",
         nombre: "Headset Logitech G435",
         precio: "30999",
         fabric: "logitech",
+        id: 6,
+    },
+    {
+        imagen: "assets/headset-hy-cloud.jpg",
+        nombre: "Headset HyperX CloudX",
+        precio: "20.655",
+        fabric: "HyperX",
+        id: 7,
+    },
+    {
+        imagen: "assets/keyboard-hy-alloy.jpg",
+        nombre: "Keyboard HyperX Alloy Origins",
+        precio: "49.999",
+        fabric: "HyperX",
+        id: 8,
+    },
+    {
+        imagen: "assets/keyboard-g213.jpg",
+        nombre: "Keyboard Logitech G213",
+        precio: "37.999",
+        fabric: "logitech",
+        id: 9,
+    },
+    {
+        imagen: "assets/mousepad-logit.jpg",
+        nombre: "Mousepad Logitech G240",
+        precio: "5.700",
+        fabric: "logitech",
+        id: 10,
+    },
+    {
+        imagen: "assets/mousepad-red.jpg",
+        nombre: "Mousepad Redragon P006",
+        precio: "10.000",
+        fabric: "Redragon",
+        id: 11,
+    },
+    {
+        imagen: "assets/g808.jpg",
+        nombre: "Joystick Redragon G808",
+        precio: "17.500",
+        fabric: "Redragon",
+        id: 12,
+    },
+    {
+        imagen: "assets/g807.jpg",
+        nombre: "Joystick Redragon G807",
+        precio: "10.000",
+        fabric: "Redragon",
+        id: 13,
     },
 ]
 // llamamos a la clase products2
@@ -133,6 +144,7 @@ function funProduct () {
                 <img src="${item.imagen}">
                 <h3>${item.nombre}</h3>
                 <p>$${item.precio}</h3>
+                <button class="agregar-carrito" data-id="${item.id}">Agregar al Carrito</button>
             </div>
         `;
         product.appendChild(a);
@@ -149,4 +161,5 @@ menuBoton.addEventListener("click", menuToggle);
     function menuToggle () {
         const menuDesplegable = document.querySelector(".nav");
         menuDesplegable.classList.toggle("active");
+        menuBoton.classList.toggle("active");
     }
